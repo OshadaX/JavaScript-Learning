@@ -7,3 +7,26 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
+
+.card-img {
+    width: 100%;
+    height: auto;
+}
+
+.card-title {
+    margin: 10px 0;
+}
+
+.card-price {
+    margin: 10px 0;
+}
+
+.card-button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
