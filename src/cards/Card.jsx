@@ -4,10 +4,10 @@ import "./Card.css"
 function Card() {
     return (
         <div className="card1">
-            <img src={image1} alt="" />
-            <h2>Title</h2>
-            <p>Price</p>
-            <button>Add to Cart</button>
+            <img className="card-img" src={image1} alt="" />
+            <h2 className="card-title">Title</h2>
+            <p className="card-price">Price</p>
+            <button className="card-button">Add to Cart</button>
         </div>
     )
 }
