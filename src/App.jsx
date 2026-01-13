@@ -6,14 +6,14 @@ import Student from "./components/Student"
 import UserGreeting from "./components/UserGreeting"
 import List from "./components/List"
 import Button from "./components/Button"
-
+import Reducer from "./components/hooks/Reducer"
 
 function App() {
 
   return (
     <div>
-      <Button />
 
+      <Reducer />
 
     </div>
   )
