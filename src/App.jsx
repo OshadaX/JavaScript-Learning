@@ -7,13 +7,16 @@ import UserGreeting from "./components/UserGreeting"
 import List from "./components/List"
 import Button from "./components/Button"
 import Reducer from "./components/hooks/Reducer"
+import ToDo from "./components/tasks/ToDo"
+import Hooks from "./components/tasks/hooks"
 
 function App() {
 
   return (
     <div>
 
-      <Reducer />
+
+      <Hooks />
 
     </div>
   )
