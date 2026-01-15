@@ -9,14 +9,18 @@ import Button from "./components/Button"
 import Reducer from "./components/hooks/Reducer"
 import ToDo from "./components/tasks/ToDo"
 import Hooks from "./components/tasks/hooks"
+import LiveText from "./components/tasks/LiveText"
+import Form from "./components/tasks/form"
+import Effect from "./components/hooks/Effect"
+import Strength from "./components/tasks/strength"
 
 function App() {
 
   return (
     <div>
+      <Strength />
 
 
-      <Hooks />
 
     </div>
   )
