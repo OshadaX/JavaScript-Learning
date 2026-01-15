@@ -2,9 +2,20 @@ import { useState } from "react"
 
 function toggleButton() {
 
-    const [isToggled, setIsToggled] = useState(false)
+    const count = 5
 
-    const [name, setName] = useState("")
+    function handleOnClick() {
+
+        if (count == 5) {
+            console.log("count is 5");
+        }
+        else {
+            console.log("count is not 5");
+        }
+
+    }
+
+
 
 
 
@@ -13,12 +24,9 @@ function toggleButton() {
 
 
     return (
-        <div>
-            <h1>{isToggled ? "ON" : "OFF"}</h1>
-            <button onClick={() => setIsToggled(!isToggled)}>Toggle</button>
-            <button onClick={() => setName("Oshada")}>Set Name</button>
-            <h2>{name}</h2>
-        </div>
+
+        <button onClick={handleOnClick}>click me</button>
+
     )
 }
 
