@@ -1,64 +1,62 @@
+import { useState } from 'react'
 
-import { useReducer, useState } from "react";
-
-
-const initialState = {
-    todos: []
-}
-
-function reducer(state, action) {
-    switch (action.type) {
-        case "ADD_TODO":
-            return {
-                todos: [...state.todos, action.payload]
-            }
-        case "DELETE_TODO":
-            return {
-                todos: state.todos.filter((todo, index) => index !== action.payload)
-            }
-        default:
-            return state
-    }
-}
-
-
-
-
-function ToDo() {
-
-    const [state, dispatch] = useReducer(reducer, initialState)
-    const [newTodo, setNewTodo] = useState("")
+function TodoApp() {
+    const [todos, setTodos] = useState([])
+    const [inputValue, setInputValue] = useState('')
 
     const addTodo = () => {
-        dispatch({ type: "ADD_TODO", payload: newTodo })
+        if (inputValue.trim() === '') return
+
+        const newTodo = {
+            id: Date.now(),
+            text: inputValue,
+            completed: false
+        }
+
+        setTodos([...todos, newTodo])
+        setInputValue('')
     }
 
-    const deleteTodo = (index) => {
-        dispatch({ type: "DELETE_TODO", payload: index })
+    const deleteTodo = (id) => {
+        setTodos(todos.filter(todo => todo.id !== id))
     }
 
-
-
-
-
-
-
-
+    const toggleTodo = (id) => {
+        setTodos(todos.map(todo =>
+            todo.id === id
+                ? { ...todo, completed: !todo.completed }
+                : todo
+        ))
+    }
 
     return (
         <div>
-            <h1>ToDo App</h1>
+            <h1>My Todo App</h1>
 
-            <input type="text" placeholder="Add todo" value={newTodo} onChange={(e) => setNewTodo(e.target.value)} />
-            <button onClick={addTodo}>
-                Add
-            </button>
+            <div>
+                <input
+                    type="text"
+                    value={inputValue}
+                    onChange={(e) => setInputValue(e.target.value)}
+                    placeholder="Enter a todo"
+                />
+                <button onClick={addTodo}>Add</button>
+            </div>
 
             <ul>
-                {state.todos.map((todo, index) => (
-                    <li key={index}>
-                        {todo}
-                        <button onClick={() => deleteTodo(index)}>Delete</button>
+                {todos.map(todo => (
+                    <li key={todo.id}>
+                        <input
+                            type="checkbox"
+                            checked={todo.completed}
+                            onChange={() => toggleTodo(todo.id)}
+                        />
+                        <span style={{
+                            textDecoration: todo.completed ? 'line-through' : 'none'
+                        }}>
+                            {todo.text}
+                        </span>
+                        <button onClick={() => deleteTodo(todo.id)}>Delete</button>
                     </li>
                 ))}
             </ul>
@@ -66,4 +64,4 @@ function ToDo() {
     )
 }
 
-export default ToDo
+export default TodoApp
