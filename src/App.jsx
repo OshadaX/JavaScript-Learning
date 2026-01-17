@@ -13,12 +13,14 @@ import LiveText from "./components/tasks/LiveText"
 import Form from "./components/tasks/form"
 import Effect from "./components/hooks/Effect"
 import Strength from "./components/tasks/strength"
+import Task2 from "./components/tasks/task2"
 
 function App() {
 
   return (
     <div>
-      <ToDo />
+
+      <Task2 />
 
 
 
