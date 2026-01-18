@@ -15,13 +15,14 @@ import Effect from "./components/hooks/Effect"
 import Strength from "./components/tasks/strength"
 import Task2 from "./components/tasks/task2"
 import Task3 from "./components/tasks/task3"
+import Task001 from "./components/tasks/Task001"
 
 function App() {
 
   return (
     <div>
 
-      <Task3 />
+      <Task001 />
 
 
 
