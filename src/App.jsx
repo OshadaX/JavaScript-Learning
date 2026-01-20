@@ -16,13 +16,15 @@ import Strength from "./components/tasks/strength"
 import Task2 from "./components/tasks/task2"
 import Task3 from "./components/tasks/task3"
 import Task001 from "./components/tasks/Task001"
+import Task002 from "./components/tasks/task002"
+import Task003 from "./components/tasks/task003"
 
 function App() {
 
   return (
     <div>
 
-      <Task001 />
+      <Task003 />
 
 
 
